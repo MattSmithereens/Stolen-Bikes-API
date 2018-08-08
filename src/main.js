@@ -23,10 +23,13 @@ $(document).ready(function() {
 
       stolenBikes.then(function(response) {
         let body = JSON.parse(response);
-debugger;
+console.log(body);
         for (let i = 0; i <= body.bikes.length; i++){
-          console.log(i);
-          $('#results').append("<li>" + body.bikes[i].title + "</li>");
+          $('#results').append("<h3>" + body.bikes[i].title + "</h3>");
+          $('#results').append("<li>" + body.bikes[i].frame_colors[0] + "</li>");
+          $('#results').append("<li>" + body.bikes[i].stolen_location + "</li>");
+          $('#results').append("<li>" + body.bikes[i].year + "</li></ul><hr>");
+
         }
       }, function(error) {
         console.log(error);
