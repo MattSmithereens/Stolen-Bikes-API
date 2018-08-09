@@ -11,11 +11,27 @@
         <label for="zip">Enter your zip code to see stolen bikes near you:</label>
         <input type="number" name="zip" class="form-control" id="zip">
       </div>
-      <button type="submit" name="submit-button">Find Bikes</button>
+      <button type="submit" class="btn btn-primary" name="submit-button">Find Bikes</button>
     </form>
-    <ul id="results">
-
-    </ul>
+    <div class="weather">
+      <h1>Current Weather in <span class="city"></span>: <span class="weatherbox"><img src="" alt="weatherIcon" class="weatherIcon"> <span class="main"></span></span></h1>
+      <div class="row">
+        <div class="col-md-6">
+          <p>Current Temperature: <span class="temp"></span></p>
+          <p>Current Humidity: <span class="humidity"></span></p>
+          <p>Today's low: <span class="temp_min"></span></p>
+          <p>Today's High: <span class="temp_max"></span></p>
+        </div>
+        <div class="col-md-6">
+          <p>Current Pressure: <span class="pressure"></span></p>
+          <p>Current Wind Speed: <span class="speed"></span></p>
+          <p>Today's Sunrise: <span class="sunrise"></span></p>
+          <p>Today's Sunset: <span class="sunset"></span></p>
+        </div>
+      </div>
+    </div>
+    <div class="row" id="results">
+    </div>
   </div>
 </body>
 </html>

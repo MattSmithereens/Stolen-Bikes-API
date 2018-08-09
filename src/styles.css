@@ -1,3 +1,33 @@
 body {
   background-color: #fffff0;
 }
+
+.weather{
+  display: none;
+  border: 1px solid black;
+  background: white;
+  padding: 20px;
+  margin: 2rem 0;
+}
+
+#results .col-md-6{
+margin-bottom: 20px;
+}
+
+.weather h1 {
+  font-size: 1.5rem;
+}
+
+.main {
+  font-size: 1.5rem;
+  color: grey;
+}
+
+.weatherbox {
+    background: white;
+}
+
+.weatherIcon{
+    height: 45px;
+    margin-bottom: 7px;
+}
