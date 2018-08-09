@@ -58,7 +58,7 @@ $(document).ready(function() {
             triviaFact.then(function(response) {
             let triviaBody = JSON.parse(response);
 
-            $('#results').append("<div class='col-md-6'><h3>" + body.bikes[i].title + "</h3> Frame Color: " + body.bikes[i].title +"<br>Last Known Location: " + body.bikes[i].stolen_location + "<br>Date Stolen: Sorry your bike got stolen on " + date + ".  It was a big day.  Did you know that " + triviaBody.text + "  Wow!</div>" );
+            $('#results').append("<div class='col-md-6'><h3>" + body.bikes[i].title + "</h3> <span class='bold'>Frame Color:</span> " + body.bikes[i].title +"<br><span class='bold'>Last Known Location:</span> " + body.bikes[i].stolen_location + "<br><span class='bold'>Date Stolen:</span> Sorry your bike got stolen on " + date + ".  It was a big day.  Did you know that " + triviaBody.text + "  Wow!</div>" );
 
             }, function(error) {
               console.log(error);
