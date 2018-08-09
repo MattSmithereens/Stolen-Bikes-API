@@ -24,7 +24,7 @@ $(document).ready(function() {
       let forecast = newWeatherForecast.getForecast(lat, long);
       forecast.then(function(response) {
         let body = JSON.parse(response);
-        console.log(body);
+
         let sunrise = new Date(body.sys.sunrise * 1000);
         let sunset = new Date(body.sys.sunset * 1000);
         let sunriseTime = sunrise.toLocaleTimeString();
@@ -51,22 +51,19 @@ $(document).ready(function() {
           for (let i = 0; i <= body.bikes.length; i++){
             let date = new Date(body.bikes[i].date_stolen * 1000);
             let dateFact = new DateFactAPI();
-            let month = date.getMonth;
-            let day = date.getDay;
+            let month = date.getMonth() + 1;
+            let day = date.getDate();
             let triviaFact = dateFact.getTriviaFact(month, day);
-              triviaFact.then(function(response) {
-                let body = JSON.parse(response);
-                console.log(body);
-                  //$('#results').append(body.triviaFact);
-              //})
+            //debugger;
+            triviaFact.then(function(response) {
+            let triviaBody = JSON.parse(response);
+
+            $('#results').append("<div class='col-md-6'><h3>" + body.bikes[i].title + "</h3> Frame Color: " + body.bikes[i].title +"<br>Last Known Location: " + body.bikes[i].stolen_location + "<br>Date Stolen: Sorry your bike got stolen on " + date + ".  It was a big day.  Did you know that " + triviaBody.text + "  Wow!</div>" );
 
             }, function(error) {
               console.log(error);
             });
-
-            $('#results').append("<div class='col-md-6'><h3>" + body.bikes[i].title + "</h3> Frame Color: " + body.bikes[i].title +"<br>Last Known Location: " + body.bikes[i].stolen_location + "<br>Date Stolen: " + date + "</div>" );
           }
-
         }, function(error) {
           console.log(error);
         });
